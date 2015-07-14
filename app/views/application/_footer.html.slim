@@ -1,0 +1,14 @@
+.container-fluid
+  footer
+    ul.list-inline.pull-right
+      li
+        small
+          = link_to 'English', url_for(params.merge(locale: :en)), class: "#{'link-plain' if I18n.locale == :en}"
+      li
+        small
+          = link_to '日本語', url_for(params.merge(locale: :ja)), class: "#{'link-plain' if I18n.locale == :ja}"
+
+    p
+      small
+        | &copy; 2015
+        =< link_to 'tnantoka', 'https://twitter.com/tnantoka', target: '_blank'

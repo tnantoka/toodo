@@ -1,0 +1,15 @@
+- if flash[:notice].present? || flash[:alert].present?
+  .container-fluid
+    - if flash[:notice].present?
+      .alert.alert-success
+        button.close type="button" data-dismiss="alert" &times;
+        = flash[:notice]
+    - if flash[:alert].present?
+      .alert.alert-danger
+        button.close type="button" data-dismiss="alert" &times;
+        - if flash[:alert].is_a? Array
+          ul.list-unstyled
+            - flash[:alert].each do |message|
+              li= message
+        - else
+          = flash[:alert]

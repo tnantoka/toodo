@@ -1,0 +1,18 @@
+#sidebar-wrapper
+  ul.sidebar-nav
+    li.sidebar-brand
+      = link_to t('global.brand'), :dashboard, class: 'brand-logo'
+    - @lists.each do |list|
+      li class="#{'active' if list == @list}"
+        = link_to list do
+          = list.title
+          - if list.remains.nonzero?
+            span.badge=< list.remains
+    li.sidebar-search
+      = form_for(@new_list.presence || List.new) do |f| 
+        .input-group
+          = f.text_field :title, class: 'form-control', required: Rails.env.production?, 
+            placeholder: t('activerecord.attributes.list.title')
+          span.input-group-btn
+            = f.button icon('plus fa-fw'), class: 'btn btn-primary', data: { disable_with: spinner }
+    li.text-center= render 'sidebar_ad'

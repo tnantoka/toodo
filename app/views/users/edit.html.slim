@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading= t('.profile')
+  .panel-body
+    = render 'form'
+
+.panel.panel-default
+  .panel-heading= t('.integrations')
+  .panel-body
+    ul.list-unstyled 
+      li
+        p
+          = link_to t('.allow_access_to_gist'), '/auth/github?scope=gist', class: 'btn btn-primary',
+            data: { disable_with: spinner }, disabled: current_user.gist?
+          - if @user.gist?
+            i.fa.fa-check.fa-fw.fa-lg.text-success<
+        - if @rate_limit.present?
+          =< "#{t('.rate_limit')}: #{@rate_limit.remaining} / #{@rate_limit.limit}"
+          = link_to 'https://developer.github.com/v3/#rate-limiting', target: '_blank' do 
+            i.fa.fa-question-circle.fa-fw

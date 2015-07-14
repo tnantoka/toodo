@@ -1,0 +1,65 @@
+en:
+  global:
+    brand: TooDo
+    tagline: Minimal task lists with Markdown and Gist.
+    are_you_sure: Are you sure?
+
+  application:
+    user_menu:
+      settings: Settings
+      sign_out: Sign out
+
+  welcome:
+    index:
+      sign_in_with_github: Sign in with GitHub
+      public_data_only: '* Public data only for sign in'
+    dashboard:
+      no_list_found: No list found.
+  users:
+    edit:
+      profile: Profile
+      integrations: Integrations
+      allow_access_to_gist: Allow access to gist
+      rate_limit: Rate limit
+  lists:
+    form:
+      sync_to_gist: Sync to gist
+      enable: Enable
+      disable: Disable
+      destroy_list: Destroy this list
+      created_at: Created
+      updated_at: Updated
+      ago: ' ago'
+
+  flash:
+    application:
+      unauthenticated: You need to sign in before continuing.
+      created: '%{resource_name} was successfully created.'
+      updated: '%{resource_name} was successfully updated.'
+      destroyed: '%{resource_name} was successfully destroyed.'
+    sessions:
+      signed_in: Signed in successfully.
+      signed_out: Signed out successfully.
+      failed: Sign in failed.
+      authenticated: Successfully authenticated.
+
+  activerecord:
+    models:
+      user: User
+      list: List
+    attributes:
+      user:
+        nickname: Nickname
+      list:
+        title: Title
+
+  js:
+    edit: Edit
+    save: Save
+    cancel: Cancel
+    todo: '#TODO'
+    completed_tasks: Completed tasks
+    remaining_tasks: Remaining tasks
+    completed_lists: Completed lists
+    remaining_lists: Remaining lists
+

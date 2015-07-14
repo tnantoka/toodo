@@ -1,0 +1,30 @@
+li.list-group-item
+  h4= t('.info')
+  .row
+    .col-sm-6
+      dl
+        dt= t('.created_at')
+        dd title="#{list.created_at}"
+          = time_ago_in_words list.created_at
+          =  t('.ago')
+    .col-sm-6
+      dl
+        dt= t('.updated_at')
+        dd title="#{list.updated_at}"
+          = time_ago_in_words list.updated_at
+          =  t('.ago')
+- if list.user.gist?
+  li.list-group-item
+    h4= t('.sync_to_gist')
+    = form_for(list) do |f| 
+      - if list.gist?
+        p= text_field_tag 'gist_id', "##{list.gist_id}", class: 'form-control', disabled: true
+        = hidden_field_tag 'list[gist]', false
+        = f.button t('.disable'), class: 'btn btn-default', data: { disable_with: spinner }
+      - else
+        = hidden_field_tag 'list[gist]', true
+        = f.button t('.enable'), class: 'btn btn-primary', data: { disable_with: spinner }
+li.list-group-item
+  = link_to t('.destroy_list'), list, class: 'btn btn-danger', method: :delete,
+    data: { confirm: t('global.are_you_sure'), disable_with: spinner }
+

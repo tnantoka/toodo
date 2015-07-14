@@ -1,0 +1,158 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+#wrapper.toggled {
+    padding-left: $sidebar-width;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: $sidebar-width;
+    width: 0;
+    height: 100%;
+    margin-left: -$sidebar-width;
+    overflow-y: auto;
+    background: $sidebar-bg;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: $sidebar-width;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    padding-top: 50px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -$sidebar-width;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: $sidebar-width;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: $sidebar-color;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: $sidebar-color-active;
+    background: $sidebar-bg-active;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 22px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: $sidebar-color;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: $sidebar-color-active;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: $sidebar-width;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: $sidebar-width;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        padding-top: 50px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+// https://github.com/IronSummitMedia/startbootstrap-sb-admin-2
+.sidebar-nav .sidebar-search {
+    padding: 15px;
+
+    text-indent: 0;
+    line-height: normal;
+
+    input {
+      color: $btn-primary-color;
+      background-color: $btn-primary-bg;
+      border-color: $btn-primary-border;
+      box-shadow: none;
+    }
+}
+
+.sidebar-nav li.active a {
+    text-decoration: none;
+    color: $sidebar-color-active;
+    background: $sidebar-bg-active;
+}
+
+.sidebar-nav li .badge {
+    text-indent: 0;
+}
+
+.sidebar-nav li.text-center {
+    text-indent: 0;
+}
+
+

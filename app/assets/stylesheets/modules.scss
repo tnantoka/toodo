@@ -1,0 +1,105 @@
+.clean-background {
+  background: none; 
+  border: none;
+}
+
+.text-xs {
+  font-size: 65%;
+}
+
+.cell-checkbox {
+  width: 1.5em;
+  cursor: pointer;
+  input {
+    cursor: pointer;
+  }
+}
+
+.hover-container {
+  .hover-item {
+    visibility: hidden;
+  }
+  &:hover {
+    .hover-item {
+      visibility: visible;
+    }
+  }
+}
+
+.in-place {
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.source {
+  display: none;
+}
+.markdown {
+  .html {
+    display: none;
+  }
+  .source {
+    display: block;
+  }
+} 
+.info {
+  display: none;
+}
+.settings {
+  .info {
+    display: block;
+  }
+}
+
+.table-clean > tbody > tr > td {
+  border: none;
+}
+
+.brand-logo {
+  font-family: 'Damion', cursive;
+}
+
+.link-plain {
+  color: inherit;
+}
+
+// Override
+.list-inline {
+  margin-bottom: 0;
+}
+
+.panel-body > .list-unstyled {
+  margin-bottom: 0;
+}
+
+.panel {
+  box-shadow: none;
+}
+
+.list-group-item > h4 {
+  margin-top: 5px;
+}
+
+.list-group-item dl {
+  margin-bottom: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n) {
+  background-color: $table-bg-accent;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+  background-color: $table-bg;
+}
+
+.carousel-inner > .item {
+  transition: none;
+}

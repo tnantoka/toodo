@@ -1,0 +1,19 @@
+= form_for(@user, url: :user) do |f| 
+  - if @user.errors.any? 
+    .alert.alert-danger
+      button.close type="button" data-dismiss="alert" &times;
+      ul.list-unstyled
+        - @user.errors.full_messages.each do |message| 
+          li= message
+  .form-group
+    = f.label :username
+    p.form-control-static= link_to @user.username, "https://github.com/#{@user.username}"
+  .form-group
+    = f.label :image
+    p.form-control-static= image_tag @user.avatar(64)
+  .form-group
+    = f.label :nickname
+    = f.text_field :nickname, class: 'form-control', required: Rails.env.production?
+
+  = f.submit class: 'btn btn-primary'
+

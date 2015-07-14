@@ -1,0 +1,31 @@
+.jumbotron.clean-background
+  = render 'flash'
+  .container-fluid
+    .row
+      .col-sm-5
+        h1.brand-logo= t('global.brand')
+        p= t('global.tagline')
+        p
+          = link_to '/auth/github', class: 'btn btn-primary btn-lg',
+            data: { disable_with: spinner(t('.sign_in_with_github')) } do
+            = icon('github fa-fw')
+            =< t('.sign_in_with_github')
+          br
+          small.text-muted.text-xs
+            = t('.public_data_only')
+
+      .col-sm-7
+        #carousel-screenshot.carousel.slide data-ride="carousel"
+          ol.carousel-indicators
+            li data-target="#carousel-screenshot" data-slide-to="0" class="active"
+            li data-target="#carousel-screenshot" data-slide-to="1"
+            li data-target="#carousel-screenshot" data-slide-to="2"
+
+          .carousel-inner
+            .item.active
+              = image_tag 'screenshot/1.png'
+            .item
+              = image_tag 'screenshot/2.png'
+            .item
+              = image_tag 'screenshot/3.png'
+

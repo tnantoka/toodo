@@ -1,0 +1,6 @@
+- if @lists.exists?
+  = react_component('Dashboard',
+    { lists: @lists.map { |l| l.attributes.slice('slug', 'title', 'content') } }, {})
+- else
+  .well
+    = t('.no_list_found')

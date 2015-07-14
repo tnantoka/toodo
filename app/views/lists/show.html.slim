@@ -1,0 +1,6 @@
+- content_for(:title) { @list.title }
+= react_component('ListEditor',
+  { initialContent: @list.content, initialTitle: @list.title, listId: @list.to_param,
+    infoContent: render('form', list: @list),
+    gistId: @list.gist_id, username: @list.user.username },
+  {})

@@ -1,0 +1,65 @@
+ja:
+  global:
+    brand: TooDo
+    tagline: 小さなタスクリスト。MarkdownとGistと一緒に。
+    are_you_sure: よろしいですか？
+
+  application:
+    user_menu:
+      settings: 設定
+      sign_out: ログアウト
+
+  welcome:
+    index:
+      sign_in_with_github: GitHub ログイン
+      public_data_only: '※ ログインに必要なのは公開データのみ'
+    dashboard:
+      no_list_found: まだリストがありません
+  users:
+    edit:
+      profile: プロフィール
+      integrations: 外部サービス連携
+      allow_access_to_gist: Gistへのアクセスを許可
+      rate_limit: APIリミット
+  lists:
+    form:
+      sync_to_gist: Gistに同期
+      enable: 有効化
+      disable: 無効化
+      destroy_list: このリストを削除
+      created_at: 作成
+      updated_at: 更新
+      ago: '前'
+
+  flash:
+    application:
+      unauthenticated: ログインしてください
+      created: '%{resource_name}は作成されました'
+      updated: '%{resource_name}は更新されました'
+      destroyed: '%{resource_name}は削除されました'
+    sessions:
+      signed_in: ログインしました
+      signed_out: ログアウトしました
+      failed: ログインできませんでした
+      authenticated: 認証しました
+ 
+  activerecord:
+    models:
+      user: ユーザー
+      list: リスト
+    attributes:
+      user:
+        nickname: ニックネーム
+      list:
+        title: タイトル
+
+  js:
+    edit: 編集
+    save: 保存
+    cancel: キャンセル
+    todo: '#TODO'
+    completed_tasks: 完了タスク
+    remaining_tasks: 未完了タスク
+    completed_lists: 完了リスト
+    remaining_lists: 未完了リスト
+

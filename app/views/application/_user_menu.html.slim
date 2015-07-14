@@ -1,0 +1,8 @@
+.l-user-menu
+  button.btn.btn-link.dropdown-toggle type="button" data-toggle="dropdown"
+    = image_tag current_user.avatar(20)
+  ul.dropdown-menu.dropdown-menu-right
+    li.dropdown-header= current_user.nickname
+    li class="#{'active' if controller_name == 'users'}"= link_to t('.settings'), :edit_user
+    li.divider
+    li= link_to t('.sign_out'), :sign_out, method: :delete

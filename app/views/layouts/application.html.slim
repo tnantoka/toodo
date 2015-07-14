@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    title
+      = "#{yield(:title)} | " if content_for?(:title)
+      = t('global.brand')
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Damion'
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
+    = csrf_meta_tags
+    javascript:
+      I18n.locale = "#{I18n.locale}"
+  body
+    - if home?
+      = yield
+      = render 'footer'
+    - else
+      #wrapper
+        = render 'sidebar'
+        #page-content-wrapper
+          = render 'user_menu'
+          = render 'flash'
+          .container-fluid
+            - if @list.blank?
+              = react_component('ToggleMenu', {}, {})
+            = yield
+          = render 'footer'
+
+    = render 'analytics'
