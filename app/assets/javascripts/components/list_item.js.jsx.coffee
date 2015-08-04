@@ -1,3 +1,5 @@
+ENTER_KEY_CODE = 13
+
 @ListItem = React.createClass
   propTypes:
     task: React.PropTypes.object.isRequired
@@ -47,14 +49,22 @@
 
   handleSaveClick: (e) ->
     e.preventDefault()
-    @setState(editing: false)
-    @props.onSave(@props.task, @state.name)
+    @save()
   handleCancelClick: (e) ->
     e.preventDefault()
     @setState(editing: false, name: @props.task.name)
 
   handleNameChange: (e) ->
     @setState(name: e.target.value)
+
+  handleNameKeyDown: (e) ->
+    return unless e.keyCode == ENTER_KEY_CODE
+    return unless e.target.value.length
+    @save()
+
+  save: ->
+    @setState(editing: false)
+    @props.onSave(@props.task, @state.name)
 
   render: ->
     spacer = [0...@props.task.level].map (i) ->
@@ -76,7 +86,7 @@
                       </a>
                     </li>
                   </ul>
-                  <input className="form-control in-place" value={name} onChange={this.handleNameChange} ref="name" />
+                  <input className="form-control in-place" value={name} onChange={this.handleNameChange} onKeyDown={this.handleNameKeyDown} ref="name" />
                 </div>`
                else
                 `<div>
