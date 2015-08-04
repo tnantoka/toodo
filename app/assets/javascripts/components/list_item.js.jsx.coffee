@@ -74,7 +74,7 @@ ENTER_KEY_CODE = 13
     nameNode = if @state.editing
                 name = Task.rawName(name)
                 `<div>
-                  <ul className="list-inline pull-right hover-item">
+                  <ul className="list-inline pull-right">
                     <li>
                       <a onClick={this.handleSaveClick}>
                         <span className="glyphicon glyphicon-ok"></span>

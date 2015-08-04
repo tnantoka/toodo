@@ -175,14 +175,14 @@
             {titleNode}
           </div>
         </div>
-        <div className="col-sm-6 html">
+        <div className="col-sm-8 html">
           <table className="table table-hover table-condensed table-clean">
             <tbody>
               {itemNodes}
             </tbody>
           </table>
         </div>
-        <div className="col-sm-6 source">
+        <div className="col-sm-8 source">
           <p>
             <textarea className="form-control" value={this.state.editingContent} onChange={this.handleContentChange} ref="content" />
           </p>
@@ -195,7 +195,7 @@
             </button>
           </div>
         </div>
-        <div className="col-sm-6 info">
+        <div className="col-sm-4 info">
           <ul className="list-group" dangerouslySetInnerHTML={{ __html: this.props.infoContent }} />
         </div>
       </div>
