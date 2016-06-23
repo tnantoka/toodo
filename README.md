@@ -1,7 +1,7 @@
 # TooDo [![Circle CI](https://circleci.com/gh/tnantoka/toodo.svg?style=svg)](https://circleci.com/gh/tnantoka/toodo) [![Code Climate](https://codeclimate.com/github/tnantoka/toodo/badges/gpa.svg)](https://codeclimate.com/github/tnantoka/toodo) [![Test Coverage](https://codeclimate.com/github/tnantoka/toodo/badges/coverage.svg)](https://codeclimate.com/github/tnantoka/toodo/coverage)
 
 Minimal task lists with Markdown and Gist. Powered by react-rails.  
-https://toodo.tnantoka.com/
+http://toodo.tnantoka.com/
 
 ![](app/assets/images/screenshot/2.png)
 

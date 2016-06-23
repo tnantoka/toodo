@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:tnantoka/toodo.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, ENV['DEPLOY_TO']
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -49,16 +49,25 @@ namespace :deploy do
 
 end
 
-set :rbenv_type, :user
-set :rbenv_ruby, '2.2.2'
+if ENV['RVM'].nil?
+  set :rbenv_type, :user
+  set :rbenv_ruby, '2.2.3'
+else
+  set :rvm_type, :user
+  set :rvm_ruby_version, '2.2.3'
+end
 
-set :unicorn_config_path, "#{current_path}/config/unicorn.rb"
+if ENV['PASSENGER'].nil?
+  set :unicorn_config_path, "#{current_path}/config/unicorn.rb"
 
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
+  after 'deploy:publishing', 'deploy:restart'
+  namespace :deploy do
+    task :restart do
+      invoke 'unicorn:restart'
+    end
   end
+else
+  set :passenger_restart_with_touch, true
 end
 
 namespace :db do

@@ -54,3 +54,4 @@ production:
   username: <%= ENV['TOODO_DATABASE_USERNAME'] %>
   password: <%= ENV['TOODO_DATABASE_PASSWORD'] %>
   host: <%= ENV['TOODO_DATABASE_HOST'] %>
+  socket: <%= ENV['TOODO_DATABASE_SOCKET'] %>
